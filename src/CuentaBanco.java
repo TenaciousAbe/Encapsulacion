@@ -13,6 +13,14 @@ public class CuentaBanco {
         this.saldo = Math.max(saldoInicial, 0);
     }
 
+    public String getPropietario(){
+        return propietario;
+    }
+
+    public double getSaldo(){
+        return saldo;
+    }
+
     //Metodo para retirar dinero
     public double retiro(double cantidad){
         if (cantidad<= this.saldo){
@@ -22,7 +30,12 @@ public class CuentaBanco {
         return 0;
     }
 
-
-    //Metodo - Representar un deposito
-
+    //Metodo - Representar un depósito
+    public double deposito(double cantidad) {
+        if (cantidad > 0) {
+            this.saldo = this.saldo + cantidad;
+            return cantidad;
+        }
+        return 0;
+    }
 }
